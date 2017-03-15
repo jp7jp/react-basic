@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Tasks from './components/tasks';
 import ActiveTask from './components/activetask';
+import AddTask from './components/addtask';
 
 class App extends Component {
 
@@ -18,6 +19,7 @@ class App extends Component {
         </div>
         <Tasks />
         <ActiveTask />
+        <AddTask />
       </div>
     );
   }
