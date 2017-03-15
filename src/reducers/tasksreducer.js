@@ -1,18 +1,11 @@
-// const initialState = {
-//   tasks: [
-//     {id: 1, title: 'Item 1 from Reducer'},
-//     {id: 2, title: 'Item 2 from Reducer'},
-//     {id: 3, title: 'Item 3 from Reducer'}
-//   ],
-//   active_task: null
-// }
+import { FETCH_TASKS } from '../actions';
 
-const initialState = [
-  {id: 1, title: 'Item 1 from Reducer'},
-  {id: 2, title: 'Item 2 from Reducer'},
-  {id: 3, title: 'Item 3 from Reducer'}
-]
+export const tasksReducer = (state = [], action) => {
+  switch(action.type) {
+    case FETCH_TASKS:
+      return action.payload.slice(0,10);
+    default:
+      return state;
+  }
 
-export const tasksReducer = (state = initialState, action) => {
-  return state;
 }

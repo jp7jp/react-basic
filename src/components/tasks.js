@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 import TaskItem from '../components/taskitem';
-import { selectTask } from '../actions/index';
+import { selectTask, fetchTasks } from '../actions/index';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 class Tasks extends Component {
+
+  componentWillMount() {
+    this.props.fetchTasks();
+  }
 
   taskitems() {
     return this.props.tasks.map((task) => {
@@ -29,7 +33,10 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ selectTask: selectTask }, dispatch)
+  return bindActionCreators({
+    fetchTasks: fetchTasks,
+    selectTask: selectTask
+  }, dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Tasks);

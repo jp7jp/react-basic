@@ -10,22 +10,6 @@ class App extends Component {
     activeTask: null
   }
 
-  // componentDidMount() {
-  //   fetch('https://jsonplaceholder.typicode.com/todos')
-  //     .then(response => response.json())
-  //     .then(data => {
-  //       this.setState({
-  //         tasks: data.slice(0, 10)
-  //       });
-  //     });
-  // }
-
-  // selectTask(task) {
-  //   this.setState({
-  //     activeTask: task
-  //   });
-  // }
-
   render() {
     return (
       <div className="App">
