@@ -7,7 +7,7 @@ class TaskItem extends Component {
   }
 
   render() {
-    return <li onClick={this.onSelectTask.bind(this)}>{this.props.task}</li>
+    return <li onClick={this.onSelectTask.bind(this)}>{this.props.task.title}</li>
   }
 }
 

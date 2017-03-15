@@ -6,8 +6,18 @@ import ActiveTask from './components/activetask';
 class App extends Component {
 
   state = {
-    tasks: ['Item 1', 'Item 2', 'Item 3'],
+    tasks: [],
     activeTask: null
+  }
+
+  componentDidMount() {
+    fetch('https://jsonplaceholder.typicode.com/todos')
+      .then(response => response.json())
+      .then(data => {
+        this.setState({
+          tasks: data.slice(0, 10)
+        });
+      });
   }
 
   selectTask(task) {

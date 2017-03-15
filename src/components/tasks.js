@@ -5,7 +5,7 @@ class Tasks extends Component {
 
   taskitems() {
     return this.props.tasks.map((task) => {
-      return <TaskItem key={task} task={task} selectTask={this.props.selectTask} />
+      return <TaskItem key={task.id} task={task} selectTask={this.props.selectTask} />
     });
   }
 

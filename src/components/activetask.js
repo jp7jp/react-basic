@@ -8,7 +8,7 @@ class ActiveTask extends Component {
       return <h1>Please select a task</h1>
     }
 
-    return <h1>{this.props.task}</h1>
+    return <h1>{this.props.task.title}</h1>
   }
 }
 
