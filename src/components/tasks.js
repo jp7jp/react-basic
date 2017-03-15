@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import TaskItem from '../components/taskitem';
+import { selectTask } from '../actions/index';
+import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 class Tasks extends Component {
@@ -21,10 +23,13 @@ class Tasks extends Component {
 }
 
 function mapStateToProps(state) {
-  console.log(state.tasks.tasks);
   return {
     tasks: state.tasks
   };
 }
 
-export default connect(mapStateToProps)(Tasks);
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ selectTask: selectTask }, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Tasks);

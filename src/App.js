@@ -33,7 +33,7 @@ class App extends Component {
           <h2>Tasks Manager</h2>
         </div>
         <Tasks />
-        <ActiveTask task={this.state.activeTask} />
+        <ActiveTask />
       </div>
     );
   }

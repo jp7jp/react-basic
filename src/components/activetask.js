@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 class ActiveTask extends Component {
   render() {
@@ -12,4 +13,10 @@ class ActiveTask extends Component {
   }
 }
 
-export default ActiveTask;
+function mapStateToProps(state) {
+  return {
+    task: state.activeTask
+  }
+}
+
+export default connect(mapStateToProps)(ActiveTask);
