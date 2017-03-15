@@ -10,21 +10,21 @@ class App extends Component {
     activeTask: null
   }
 
-  componentDidMount() {
-    fetch('https://jsonplaceholder.typicode.com/todos')
-      .then(response => response.json())
-      .then(data => {
-        this.setState({
-          tasks: data.slice(0, 10)
-        });
-      });
-  }
+  // componentDidMount() {
+  //   fetch('https://jsonplaceholder.typicode.com/todos')
+  //     .then(response => response.json())
+  //     .then(data => {
+  //       this.setState({
+  //         tasks: data.slice(0, 10)
+  //       });
+  //     });
+  // }
 
-  selectTask(task) {
-    this.setState({
-      activeTask: task
-    });
-  }
+  // selectTask(task) {
+  //   this.setState({
+  //     activeTask: task
+  //   });
+  // }
 
   render() {
     return (
@@ -32,7 +32,7 @@ class App extends Component {
         <div className="App-header">
           <h2>Tasks Manager</h2>
         </div>
-        <Tasks tasks={this.state.tasks} selectTask={this.selectTask.bind(this)} />
+        <Tasks />
         <ActiveTask task={this.state.activeTask} />
       </div>
     );

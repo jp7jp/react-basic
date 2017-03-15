@@ -1,5 +1,6 @@
-import React, { Component } from 'react'
-import TaskItem from '../components/taskitem'
+import React, { Component } from 'react';
+import TaskItem from '../components/taskitem';
+import { connect } from 'react-redux';
 
 class Tasks extends Component {
 
@@ -19,4 +20,11 @@ class Tasks extends Component {
 
 }
 
-export default Tasks;
+function mapStateToProps(state) {
+  console.log(state.tasks.tasks);
+  return {
+    tasks: state.tasks
+  };
+}
+
+export default connect(mapStateToProps)(Tasks);
